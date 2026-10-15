@@ -3,56 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Hello. I’m CoreDesign but you can call me Core.">
 <title>CoreDesign</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
 <style>
   :root {
-    box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
     --bg: #0D0C0C;
     --text: #3B82F6;
     color-scheme: dark;
   }
-  *, *::before, *::after { box-sizing: inherit; }
-  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
-  html, body { height: 100%; margin: 0; }
+  *, *::before, *::after { box-sizing: border-box; }
   body {
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .stage {
-    position: relative;
-    width: 480px;
-    max-width: 100%;
-    height: 360px;
-    background: var(--bg);
-  }
-  .line {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: var(--text);
-    font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 15px;
-    letter-spacing: 0.5px;
     margin: 0;
+    min-height: 100dvh;
+    padding: env(safe-area-inset-top, 0px) 16px env(safe-area-inset-bottom, 0px);
+    display: grid;
+    place-items: center;
+    background: var(--bg);
+    color: var(--text);
+    font: 400 10px/15px "Instrument Serif", Georgia, "Times New Roman", serif;
+    letter-spacing: 0.5px;
+    text-align: center;
   }
-  .line.one { top: 15px; }
-  .line.two { top: 37px; }
+  main {
+    width: min(480px, 100%);
+    min-height: 360px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  h1, p { margin: 0; font: inherit; }
 </style>
 </head>
 <body>
-  <div class="stage">
-    <h class="line one">Hello. I’m CoreDesign but you can call me Core.</h>
-    <p class="line two">I like trains.</p>
-  </div>
+  <main>
+    <h1>Hello. I’m CoreDesign but you can call me Core.</h1>
+    <p>I like trains.</p>
+  </main>
 </body>
 </html>
